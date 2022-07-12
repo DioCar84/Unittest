@@ -1,5 +1,6 @@
 import unittest
 from student import Student
+from datetime import timedelta
 
 class TestStudent(unittest.TestCase):
 
@@ -37,7 +38,12 @@ class TestStudent(unittest.TestCase):
 
         self.assertTrue(self.student.naughty_list)
 
+    def test_apply_extension(self):
+        print('test_apply_extension')
+        self.student.apply_extension(30)
+
+        self.assertNotEqual(self.student.end_date, self.student._start_date + timedelta(days=365))
+
 
 if __name__ == '__main__':
     unittest.main()
-

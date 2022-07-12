@@ -23,4 +23,12 @@ class Student:
         self.naughty_list = True
 
 
+    def apply_extension(self, days):
+        self.end_date += timedelta(days=days)
+
+
 student = Student('John', 'Doe')
+print(student._start_date)
+print(student.end_date)
+student.apply_extension(30)
+print(student.end_date)
